@@ -5,11 +5,12 @@ const ig = new IgApiClient();
 // You must generate device id's before login.
 // Id's generated based on seed
 // So if you pass the same value as first argument - the same id's are generated every time
+
 ig.state.generateDevice(process.env.IG_USERNAME);
 
 
 // Optionally you can setup proxy url
-ig.state.proxyUrl = process.env.IG_PROXY;
+//ig.state.proxyUrl = process.env.IG_PROXY;
 (async () => {
   // Execute all requests prior to authorization in the real Android application
   // Not required but recommended
@@ -33,6 +34,10 @@ ig.state.proxyUrl = process.env.IG_PROXY;
     console.log("Following user: " + user.full_name)
     console.log(user);
   })
+
+  //const followers = ig.feed.accountFollowers(243722311);
+  //const res = await followers.request();
+
   //const items = await followersFeed.items();
   //console.log(items); // Here you can reach items. It's array.
 
